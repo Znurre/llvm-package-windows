@@ -8,7 +8,7 @@ on:
 jobs:
     windowsBuild:
         name: Windows Build
-        runs-on: windows-latest
+        runs-on: windows-2022
         env:
             BUILD_PROJECT: llvm
             BUILD_MASTER: false
