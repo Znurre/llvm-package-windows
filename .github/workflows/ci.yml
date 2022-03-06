@@ -49,5 +49,5 @@ jobs:
         -   name: Upload artifact
             uses: actions/upload-artifact@v3
             with:
-                name: ${{env.LLVM_RELEASE_NAME}}
+                name: ${{BUILD_PROJECT}}-${{LLVM_VERSION}}-windows-${{matrix.TARGET_CPU}}-${{matrix.CRT}}-${{matrix.CONFIGURATION}}
                 path: ${{steps.BUILD.outputs.DEPLOY_FILE}}
