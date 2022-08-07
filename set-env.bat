@@ -190,6 +190,7 @@ set LLVM_CMAKE_CONFIGURE_FLAGS= ^
 	-DLLVM_INCLUDE_TESTS=OFF ^
 	-DLLVM_INCLUDE_UTILS=OFF ^
 	-DLLVM_TEMPORARILY_ALLOW_OLD_TOOLCHAIN=ON ^
+	-DLLVM_ENABLE_PROJECTS=lld ^
 	%LLVM_CMAKE_CONFIGURE_EXTRA_FLAGS%
 
 :: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
