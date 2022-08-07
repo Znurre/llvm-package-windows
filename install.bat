@@ -18,13 +18,14 @@ exit -1
 
 if /i "%BUILD_MASTER%" == "true" (
 	git clone --depth=1 %LLVM_MASTER_URL% %WORKING_DIR%\llvm-git
-	move %WORKING_DIR%\llvm-git\llvm %WORKING_DIR%
 ) else (
-	powershell "Invoke-WebRequest -Uri %LLVM_DOWNLOAD_URL% -OutFile %WORKING_DIR%\%LLVM_DOWNLOAD_FILE%"
-	7z x -y %WORKING_DIR%\%LLVM_DOWNLOAD_FILE% -o%WORKING_DIR%
-	7z x -y %WORKING_DIR%\llvm-%LLVM_VERSION%.src.tar -o%WORKING_DIR%
-	ren %WORKING_DIR%\llvm-%LLVM_VERSION%.src llvm
+	git clone -b llvmorg-%LLVM_VERSION% %LLVM_MASTER_URL% %WORKING_DIR%\llvm-git
 )
+
+move %WORKING_DIR%\llvm-git\cmake %WORKING_DIR%
+move %WORKING_DIR%\llvm-git\libunwind %WORKING_DIR%
+move %WORKING_DIR%\llvm-git\lld %WORKING_DIR%
+move %WORKING_DIR%\llvm-git\llvm %WORKING_DIR%
 
 if "%CONFIGURATION%" == "Debug" goto dbg
 goto :eof
