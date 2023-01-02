@@ -26,6 +26,7 @@ move %WORKING_DIR%\llvm-git\cmake %WORKING_DIR%
 move %WORKING_DIR%\llvm-git\libunwind %WORKING_DIR%
 move %WORKING_DIR%\llvm-git\lld %WORKING_DIR%
 move %WORKING_DIR%\llvm-git\llvm %WORKING_DIR%
+move %WORKING_DIR%\llvm-git\clang %WORKING_DIR%
 
 if "%CONFIGURATION%" == "Debug" goto dbg
 goto :eof
